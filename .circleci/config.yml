@@ -12,7 +12,8 @@ jobs:
       - image: golang:1.12
     steps:
       - checkout
-      - run: make benchmark 
+      - run: go get github.com/kinche/franz-cli
+      - run: franz-cli --token 123 --cmd="make benchmark" 
 workflows:
   version: 2
   test-and-benchmark:
